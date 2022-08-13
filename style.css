@@ -3,33 +3,35 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: rgb(40, 40, 40);
 }
 
 h1, h3 {
   text-align: center;
+  color: rgb(209, 138, 6);
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 10px 0px 0px 0px;
+  color: rgb(210, 210, 210);
 }
 
 ul li {
-  padding: 2px 1px;
-  /*display: block;*/
+  padding: 4px 4px;
 }
 
 p {
-  padding: 0px 0px 2px 0px;
+  padding: 0px 0px 4px 0px;
   margin: 0px;
   display: block;
 }
 
 a {
-  padding: 0px 2px;
+  padding: 0px 4px;
   margin: 0px;
-  /*display: block;*/
+  display: inline-block;
 }
 
 #container {
