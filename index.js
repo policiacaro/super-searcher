@@ -5,25 +5,42 @@ const results = document.querySelector("#results");
 
 document.addEventListener("keyup", (event) => {
   event.preventDefault();
+  console.log(keyword);
+  if (keyword.value === "") {
+    results.innerHTML = "";
+  };
   const url = `https://dictionaryapi.com/api/v3/references/collegiate/json/${keyword.value}?key=bfb2a07b-30c2-4947-8014-512e620ae801`;
 
   fetch(url)
     .then(response => response.json())
     .then((data) => {
-      //console.log(data);
+      console.log(data, "loggin' the data");
       results.innerHTML = "";
+      if (data[0] === undefined) {
+
+        results.insertAdjacentHTML("beforeend", );
+      }
       data.forEach((word) => {
-        //console.log(word);
-        //console.log(word.hwi);
-        results.insertAdjacentHTML("beforeend",
-          `<li>
-            <p>${word.hwi.hw}    <i>(${word.fl})</i></p>
-            <p>${word.shortdef[0]}</p>
-            <a href=https://www.merriam-webster.com/dictionary/${keyword.value}><img src="https://dictionaryapi.com/images/MWLogo_120x120.png" border="0" alt="Merriam-Webster Dictionary" width="50" height="50"></a>
-            <a href=https://www.dictionary.com/browse/${keyword.value}><img src="https://www.dictionary.com/e/wp-content/uploads/2020/09/App-Icon-9.23.2020.png" border="0" alt="Dictionary.com Dictionary" width="50" height="50"></a>
-            <a href=https://en.wikipedia.org/wiki/${keyword.value}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1920px-Wikipedia-logo-v2-en.svg.png" border="0" alt="Wikipedia" width="50" height="50"></a>
-          </li>`
-        );
+        console.log(word, "after json parse");
+        console.log(word.hwi);
+        /*
+        if(word.hwi === undefined){
+          results.insertAdjacentHTML("beforeend",
+            `<li>
+
+            </li>`
+          );
+        } else {}*/
+          results.insertAdjacentHTML("beforeend",
+            `<li>
+              <p>${word.hwi.hw}    <i>(${word.fl})</i></p>
+              <p>${word.shortdef[0]}</p>
+              <a href=https://www.merriam-webster.com/dictionary/${word.hwi}><img src="https://dictionaryapi.com/images/MWLogo_120x120.png" border="0" alt="Merriam-Webster Dictionary" width="50" height="50"></a>
+              <a href=https://www.dictionary.com/browse/${word.hwi}><img src="https://www.dictionary.com/e/wp-content/uploads/2020/09/App-Icon-9.23.2020.png" border="0" alt="Dictionary.com Dictionary" width="50" height="50"></a>
+              <a href=https://en.wikipedia.org/wiki/${word.hwi}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1920px-Wikipedia-logo-v2-en.svg.png" border="0" alt="Wikipedia" width="50" height="50"></a>
+            </li>`
+          );
+
       });
       /*
       if (data.words != null) {
