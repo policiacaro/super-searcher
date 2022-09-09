@@ -9,10 +9,15 @@
 <body>
 
   <div id="container">
-    <h1>Dictionary Super Searcher</h1>
-    <h3>Type in a word, and get instant links to search on Dictionary.com and Merriam-Webster!</h3>
-      <input type="input" id="search" autocomplete="off" placeholder="Search your socks off">
-      <!--<input type="submit" id="search-button">-->
+    <h1>Super Searcher</h1>
+    <h3>Type in something, get info and links about it</h3>
+    <form> 
+      <div id="inputContainer">
+        <div><input type="submit" id="dict-search-button" value="dict"></div>
+        <div><input type="input" id="search" autocomplete="off" placeholder="Search your socks off"></div>
+        <div><input type="submit" id="wiki-search-button" value="wiki"></div>
+      </div>
+      </form>
     <ul id="results">
     </ul>
   </div>
