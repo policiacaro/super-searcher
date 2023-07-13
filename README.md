@@ -1,6 +1,6 @@
 # super-searcher
 
-[super-searcher](http://super-searcher.herokuapp.com/)  
+[super-searcher](https://super-searcher.policiacaro.repl.co)  
 
 ![super-search landing page](superSearcherMain.png?raw=true)
 ![super-search dictionary search](superSearcherDict.png?raw=true)
